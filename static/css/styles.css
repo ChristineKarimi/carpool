@@ -3,9 +3,10 @@
     background: url('/static/images/g.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-attachment: fixed;
-    height:100vh;
+    height:90vh;
+    color: black;
     margin-top: -50px;
     padding-bottom: 30px !important;
   }
