@@ -15,3 +15,9 @@ class passenger_profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         passenger_profile.objects.create(user=instance)
+
+  
+@receiver(post_save, sender = User)
+def save_user_profile(sender,instance, **kwargs):
+    instance.passenger_profile.save()
+        
