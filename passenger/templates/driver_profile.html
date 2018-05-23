@@ -1,6 +1,7 @@
-{% extends 'riders/passengers.html' %}
+{% extends 'passengers/base.html' %}
 
 {% load static %}
+
 
 {% block content %}
 <div class="container">
@@ -16,6 +17,7 @@
         {% endif %} <br>
         <h1 class="username text-center">{{ driver_profile.user.username }}</h1>
         <h3>Review</h3>
+        {% driver_profile %}
       </div>
       <div class="col-md-8">
         <div class="row">
