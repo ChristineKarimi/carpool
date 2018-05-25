@@ -3,7 +3,7 @@
 <div class="navbar navbar navbar-fixed-top app-navbar p-t-md" id="main-nav">
       <div class="container desktop">
         <div class="navbar-header">
-            <a href="/" class="navbar-brand"><span> <img src="static/images/p.png" width="60px" alt=""> Uber</span></a>
+            <a href="/" class="navbar-brand"><span> <img src="static/images/car-pooler.png" alt=""> Car poolers</span></a>
             <button type="button" data-toggle="collapse" data-target="#navbar-main" class="navbar-toggle">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -14,7 +14,7 @@
             <ul class="nav navbar-nav ">
                 {% if request.user.is_authenticated %}
                     <li><a class="navbar-brand" href="/driver/">Sign In as a Driver</a></li>
-                    <li><a class="navbar-brand" href="/rider/">Sign In as a Passenger</a></li>
+                    <li><a class="navbar-brand" href="/passenger/">Sign In as a Rider</a></li>
                     <li><a class="navbar-brand" href="/logout"><i class="fa fa-sign-out " aria-hidden="true"></i></a></li>
                 {% else %}
                     <li><a href="/accounts/login">Login</a></li>
