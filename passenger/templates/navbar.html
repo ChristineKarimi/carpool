@@ -14,10 +14,10 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if request.user.is_authenticated %}
                     <li>
-                        <a href="/rider/"><i class="fa fa-home " aria-hidden="true"></i></a>
+                        <a href="/passenger/"><i class="fa fa-home " aria-hidden="true"></i></a>
                     </li>
                     <li>
-                        <a href="{% url 'rider:profile' request.user.username %}"><i class="fa fa-user " aria-hidden="true"></i></a>
+                        <a href="{% url 'passenger:profile' request.user.username %}"><i class="fa fa-user " aria-hidden="true"></i></a>
                     </li>
                     <li>
                         <a href="/logout"><i class="fa fa-sign-out " aria-hidden="true"></i></a>

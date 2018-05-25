@@ -24,7 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name = 'index'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    # url(r'^logout/$', view.logout, {"next_page": '/'}),
-    # url(r'^driver/', include('driver.urls')),
-    # url(r'^rider/', include('passenger.urls')),
+   
 ]

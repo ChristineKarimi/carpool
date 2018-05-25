@@ -1,0 +1,18 @@
+
+.city .app-header{
+    background: url('/static/images/g.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    height:90vh;
+    color: rgb(8, 39, 179);
+    margin-top: -50px;
+    padding-bottom: 30px !important;
+  }
+  .p-y-lg {
+    background: url('/static/images/88.jpg') no-repeat center fixed;
+    height:80vh;
+    padding-bottom: 60px !important;
+    color: rgb(6, 37, 177);
+  }

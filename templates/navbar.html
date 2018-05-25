@@ -13,8 +13,8 @@
         <div id="navbar-main" class="navbar-collapse collapse navbar-right">
             <ul class="nav navbar-nav ">
                 {% if request.user.is_authenticated %}
-                    <li><a class="navbar-brand" href="/driver/">Sign In as a Driver</a></li>
-                    <li><a class="navbar-brand" href="/passenger/">Sign In as a Rider</a></li>
+                    <li><a class="navbar-brand" href="/driver/">Sign in to Driver</a></li>
+                    <li><a class="navbar-brand" href="/passenger/">Sign in to ride</a></li>
                     <li><a class="navbar-brand" href="/logout"><i class="fa fa-sign-out " aria-hidden="true"></i></a></li>
                 {% else %}
                     <li><a href="/accounts/login">Login</a></li>
