@@ -11,8 +11,8 @@ from django.core.urlresolvers import reverse
 def passenger(request):
   user = User.objects.get(username = request.user.username)
   profile = Passenger_profile.objects.get(user =user)
-  drivers = Driver_profile.objects.all()
-  return render(request, 'passenger/passenger.html', {"profile": profile, "drivers":drivers})
+  # drivers = Driver_profile.objects.all()
+  return render(request, 'passengers/passenger.html', {"profile": profile})
 
 def update_profile(request,username):
   user = User.objects.get(username = username)

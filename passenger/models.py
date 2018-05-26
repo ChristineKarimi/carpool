@@ -5,7 +5,7 @@ from django.dispatch import receiver
 
 
 # Create your models here.
-class passenger_profile(models.Model):
+class Passenger_profile(models.Model):
   user = models.OneToOneField(User, on_delete = models.CASCADE)
   bio = models.TextField(max_length=200, blank =True)
   location = models.CharField(max_length = 50, blank =True)
