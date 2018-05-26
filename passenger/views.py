@@ -43,3 +43,16 @@ def profile(request, username):
   title = f"{user.username}"
 
   return render(request, 'passengers/profiles/profile.html', {"title":title, "user":user, "profiles": profiles})
+
+def driver_profile(request,driver_profile_id,trip_plan_id):  
+  user= User.objects.get(id = driver_profile_id)
+  if user:
+    driver_profile = Driver_profile.objects.get(user=user)
+    trip_plan = TripPlan.objects.get(id = trip_plan_id)
+    existing_bookings = Booking.objects.filter(trip_plan =trip_plan.id)
+    if len(existing_bookings) < trip_plan.driver_profile.car_capacity:
+      seats_left = trip_plan.driver_profile.car_capacity - len(existing_bookings)
+      return render(request,'passengers/driver_profile.html',{'driver_profile': driver_profile,"seats_left":seats_left,"trip_plan":trip_plan})
+    elif len(existing_bookings) == trip_plan.driver_profile.car_capacity:
+      message = "this ride is fully booked"
+      return render(request,'passengers/driver_profile.html',{'driver_profile': driver_profile,"message":message})
