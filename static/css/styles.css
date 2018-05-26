@@ -1,18 +1,23 @@
+body {
+  background: url('/static/images/11.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
 
-.city .app-header{
-    background: url('/static/images/g.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+
+.city .app-header {
+    
+
     background-attachment: fixed;
-    height:90vh;
-    color: rgb(8, 39, 179);
+    height:92vh;
+    color: white;
     margin-top: -50px;
     padding-bottom: 30px !important;
   }
-  .p-y-lg {
-    background: url('/static/images/88.jpg') no-repeat center fixed;
-    height:80vh;
-    padding-bottom: 60px !important;
-    color: rgb(6, 37, 177);
-  }
+
+ h3 {
+   color: white;
+   margin-bottom: 10px;
+   text-align: center;
+}
