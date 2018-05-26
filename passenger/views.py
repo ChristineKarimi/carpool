@@ -32,3 +32,14 @@ def update_profile(request,username):
     user_form = UserForm(instance = request.user)
     profile_form = ProfileForm(instance = request.user.passenger_profile)
   return render(request, 'passengers/profiles/profile_form.html', {"user_form":user_form, "profile_form":profile_form})
+
+@login_required
+def profile(request, username):
+  user = User.objects.get(username =username)
+  if not user:
+    return redirect('passenger')
+  profiles = Passenger_profile.objects.get(user =user)
+
+  title = f"{user.username}"
+
+  return render(request, 'passengers/profiles/profile.html', {"title":title, "user":user, "profiles": profiles})
