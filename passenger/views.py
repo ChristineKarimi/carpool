@@ -13,3 +13,22 @@ def passenger(request):
   profile = Passenger_profile.objects.get(user =user)
   drivers = Driver_profile.objects.all()
   return render(request, 'passenger/passenger.html', {"profile": profile, "drivers":drivers})
+
+def update_profile(request,username):
+  user = User.objects.get(username = username)
+  if request.method == 'POST':
+    user_form = UserForm(request.POST, instance = request.user)
+    profile_form = ProfileForm(request.POST, instance =request.user.passenger_profile, files = request.FILES)
+    if user_form.is_valid() and profile_form.is_valid():
+      print('gjhdgasjdg')
+      user_form.save()
+      profile_form.save()
+      messages.success(request, ('Your profile was successfully updated!'))
+      return redirect(reverse('passenger:profile', kwargs = {'username': request.user.username}))
+    else:
+      messages.error(request, ('Please correct the error below.'))
+
+  else:
+    user_form = UserForm(instance = request.user)
+    profile_form = ProfileForm(instance = request.user.passenger_profile)
+  return render(request, 'passengers/profiles/profile_form.html', {"user_form":user_form, "profile_form":profile_form})
