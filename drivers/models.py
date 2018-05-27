@@ -38,3 +38,13 @@ class Driver_profile(models.Model):
         if self.profile_pic and hasattr(self.profile_pic, 'url'):
             return self.profile_pic.url
 
+
+class TripPlan(models.Model):
+    driver_profile = models.ForeignKey(Driver_profile,on_delete=models.CASCADE )
+    current_location = models.CharField(max_length = 30)
+    destination = models.CharField(max_length = 30)
+    
+
+class Booking(models.Model):
+    passenger_profile = models.ForeignKey(Passenger_profile,on_delete=models.CASCADE)
+    trip_plan = models.ForeignKey(TripPlan,on_delete=models.CASCADE)

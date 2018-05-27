@@ -16,16 +16,19 @@
       <h1 class="username">{{ user.first_name }}</h1>
       
     </div>
+    <h2 class="text-center">Welcome {{ user.username }} </h2>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Pick up points</a></li>
+        <li><a data-toggle="tab" href="#drivers">Drivers</a></li>
+        <li><a data-toggle="tab" href="#review">Review</a></li>
+      </ul>
     
-            <h2 class="text-center">Welcome {{ user.username }} </h2>
-          <ul class="nav nav-tabs">
-            <li><a data-toggle="tab" href="#drivers">Drivers</a></li>
-            <li><a data-toggle="tab" href="#review">Review</a></li>
-        </ul>
-        
+        <!-- <div class="tab-content">
+          <div id="home" class="tab-pane fade in active">
+           -->
     <style>
       #map {
-        height: 30%;
+        height: 40%;
         margin-top: 3%;
         margin-left: 12%;
         margin-right: 12%;
