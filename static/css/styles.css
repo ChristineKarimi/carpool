@@ -1,5 +1,5 @@
 body {
-  background: url('/static/images/11.jpg');
+  background: url('/static/images/111.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -10,7 +10,7 @@ body {
     
 
     background-attachment: fixed;
-    height:92vh;
+    height:90vh;
     color: white;
     margin-top: -50px;
     padding-bottom: 30px !important;
@@ -18,6 +18,28 @@ body {
 
  h3 {
    color: white;
-   margin-bottom: 10px;
    text-align: center;
+}
+
+.nav {
+  color: white;
+}
+
+li a {
+  color: white;
+  padding-bottom: 30px !important;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+a {
+  color: white;
+  padding-bottom: 30px !important;
+  font-weight: bold;
+  font-size: 50px;
+}
+.block {
+  width: 100%;
+  padding: 10px 20px;
+  color: inherit;
 }
