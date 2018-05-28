@@ -1,0 +1,8 @@
+body {
+  background: url('/static/images/qq.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+

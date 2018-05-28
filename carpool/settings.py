@@ -26,7 +26,33 @@ SECRET_KEY = 'v8s-c^q8&i_37m)b-$+_*du5=-e1mqa_!4sfp3iazyw3k4a^jq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
+# SECRET_KEY = config('SECRET_KEY')
+CLIENT_ID = ('CLIENT_ID')
+# API_KEY = config('API_KEY')
+GOOGLE_API = 'AIzaSyAjT5RSv8RGaxktrIJYOLLPmU-SwjqnGvk'
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyAjT5RSv8RGaxktrIJYOLLPmU-SwjqnGvk'
 
+
+LOCATION_FIELD = {
+    'map.provider': 'google',
+    'map.zoom': 15,
+    'search.provider': 'google',
+    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+    'provider.google.api_key': GOOGLE_API,
+    'provider.google.map.type': 'ROADMAP',
+}
+
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 3,
+    'maxZoom': 15,
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
+}
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,8 +68,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
-    'drivers',
-    'passenger',
+    'driver',
+    'rider',
+    'geoposition',
+    # 'cart',
+
 ]
 
 MIDDLEWARE = [
@@ -78,6 +107,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'carpool.wsgi.application'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+
 
 
 # Database

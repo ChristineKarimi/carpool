@@ -1,5 +1,5 @@
 """
-WSGI config for carpool project.
+WSGI config for booky project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "carpool.settings")
+from whitenoise.django import DjangoWhiteNoise
+
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "booky.settings")
 
 application = get_wsgi_application()
+
+application = DjangoWhiteNoise(application)
