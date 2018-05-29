@@ -23,11 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v8s-c^q8&i_37m)b-$+_*du5=-e1mqa_!4sfp3iazyw3k4a^jq'
+SECRET_KEY = config('SECRET_KEY')
+
+DEBUG = config('DEBUG', default=True, cast=bool)
+# SECRET_KEY = 'v8s-c^q8&i_37m)b-$+_*du5=-e1mqa_!4sfp3iazyw3k4a^jq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
-# SECRET_KEY = config('SECRET_KEY')
+
+
 CLIENT_ID = ('CLIENT_ID')
 # API_KEY = config('API_KEY')
 GOOGLE_API = 'AIzaSyAjT5RSv8RGaxktrIJYOLLPmU-SwjqnGvk'
