@@ -1,8 +1,21 @@
 body {
-  background: url('/static/images/qq.jpg');
+  background: url('/static/images/aa.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
