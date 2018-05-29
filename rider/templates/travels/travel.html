@@ -25,6 +25,7 @@
 
         {{ block.super }}
 
+
             <div class="container">
 
                 <h1 class="text-center"> PROFILE </h1>
@@ -150,31 +151,104 @@
                 <div class="row">
 
                     <div id="map"></div>
-                <script>
-
-                </script>
+           
 
                 </div>
 
             </div>
+            <script>
+                    // Note: This example requires that you consent to location sharing when
+                    // prompted by your browser. If you see the error "The Geolocation service
+                    // failed.", it means you probably did not give permission for the browser to
+                    // locate you.
+                    var map, infoWindow;
 
-    {% endblock %}
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: {lat: -34.397, lng: 150.644},
+                            zoom: 15
+                        });
+
+
+                        infoWindow = new google.maps.InfoWindow;
+
+                        // Try HTML5 geolocation.
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function (position) {
+                                var pos = {
+                                    lat: position.coords.latitude,
+                                    lng: position.coords.longitude
+                                };
+
+                                var marker = new google.maps.Marker({
+                                    position: pos,
+                                    map: map
+                                });
+
+                                var directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+
+                                var stepDisplay = new google.maps.InfoWindow;
+
+
+                                infoWindow.setPosition(pos);
+                                infoWindow.open(map);
+                                map.setCenter(pos);
+                            }, function () {
+                                handleLocationError(true, infoWindow, map.getCenter());
+                            });
+                        } else {
+                            // Browser doesn't support Geolocation
+                            handleLocationError(false, infoWindow, map.getCenter());
+                        }
+                    }
+
+                    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+                        infoWindow.open(map);
+                    }
+
+                </script>
 
 
 
-    {% block scripts %}
+  
 
-            <script type="text/javascript" src="{% static 'js/map.js' %}"></script>
+           
 
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-            <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqU-vgzJDJletUr1_O7AcnF8f0es1obu8&callback=initMap">
-            </script>
+            
+
+          
+           
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+            <script async="async" defer="defer"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjT5RSv8RGaxktrIJYOLLPmU-SwjqnGvk&callback=initMap">
+        </script>
 
             <script type="text/javascript"charset="utf-8">google.load("maps","2.x"); google.load("jquery","1.3.1");</script>
 
-        {% bootstrap_javascript %}
+        
+        <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+
+      
+        
+
+
+
+        <script type="text/javascript"charset="utf-8">google.load("maps","2.x"); google.load("jquery","1.3.1");</script>
+
+
 
     {% endblock %}
 

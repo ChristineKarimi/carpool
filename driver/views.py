@@ -241,11 +241,11 @@ def book(request, id):
 #         travel = Travel.objects.get(id=id)
 #         print(travel)
 #
-#         booky = Book(driver=booked_driver, rider=rider, travel=travel)
+#         Carpool = Book(driver=booked_driver, rider=rider, travel=travel)
 #
-#         # print(booky)
+#         # print(carpool)
 #
-#         booky.save()
+#         carpool.save()
 #
 #         # if request.method == 'POST':
 #         #
@@ -253,11 +253,11 @@ def book(request, id):
 #         #
 #         #     if form.is_valid():
 #         #
-#         #         booky = form.save(commit=False)
-#         #         booky.user = rider
-#         #         booky.driver = booked_driver
+#         #         carpool = form.save(commit=False)
+#         #         carpool.user = rider
+#         #         carpool.driver = booked_driver
 #         #
-#         #         booky.save()
+#         #         carpool.save()
 #         #
 #         #         return redirect(reverse('book.id'))
 #         #
